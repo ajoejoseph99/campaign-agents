@@ -24,3 +24,13 @@ Get your api key from https://aistudio.google.com/api-keys
 ```
 gcloud run deploy marketing-agents --source . --set-env-vars="GEMINI_API_KEY=YOUR_API_KEY" --allow-unauthenticated
 ```
+
+## 5. Test your agents
+Use the following CURL command to test your agent's working.
+(Make sure to replace 'YOUR_CLOUD_RUN_URL' with your service URL)
+```
+curl -X POST [YOUR_CLOUD_RUN_URL]/generate-campaign \
+     -H "Content-Type: application/json" \
+     -d '{"event_description": "We are hosting an online bootcamp about building serverless data pipelines next Friday."}'
+```
+
